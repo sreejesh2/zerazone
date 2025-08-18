@@ -1,0 +1,44 @@
+User-agent: *
+Allow: /
+
+# Block access to admin and private areas
+Disallow: /admin/
+Disallow: /wp-admin/
+Disallow: /wp-login.php
+Disallow: /wp-config.php
+Disallow: /private/
+Disallow: /tmp/
+Disallow: /cache/
+Disallow: /backup/
+
+# Block access to sensitive files
+Disallow: /*.sql$
+Disallow: /*.log$
+Disallow: /*.txt$
+Disallow: /error_log
+Disallow: /.env
+Disallow: /.git/
+
+# Block access to search and filter pages to prevent duplicate content
+Disallow: /search/
+Disallow: /*?s=
+Disallow: /*?search=
+Disallow: /*?filter=
+Disallow: /*?sort=
+
+# Block access to tag and category pagination
+Disallow: /tag/*/page/
+Disallow: /category/*/page/
+
+# Allow important directories
+Allow: /css/
+Allow: /js/
+Allow: /images/
+Allow: /media/
+Allow: /assets/
+Allow: /uploads/
+
+
+
+# Sitemap location
+Sitemap: https://www.zerazone.com/sitemap.xml
